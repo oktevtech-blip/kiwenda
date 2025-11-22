@@ -25,7 +25,7 @@ export const navLinks = [
 ];
 
 // -----------------------------
-// ICON MAPPING (matches DB icons)
+// ICON MAPPING
 // -----------------------------
 export const iconMap = {
   Droplets,
@@ -40,19 +40,21 @@ export const iconMap = {
   UserCheck,
 };
 
+// Base URL from Environment Variable
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 // -----------------------------
-// FETCH SERVICES FROM BACKEND
+// FETCH SERVICES
 // -----------------------------
 export async function getServices() {
   try {
-    const res = await fetch("http://localhost:5000/services", {
-      next: { revalidate: 10 }, // revalidate every 10 seconds
+    const res = await fetch(`${API_URL}/services`, {
+      next: { revalidate: 10 },
     });
 
     if (!res.ok) throw new Error("Failed to fetch services");
 
-    const data = await res.json();
-    return data; // Expect an array of service objects
+    return await res.json();
   } catch (error) {
     console.error("Error fetching services:", error);
     return [];
@@ -60,18 +62,17 @@ export async function getServices() {
 }
 
 // -----------------------------
-// FETCH TESTIMONIALS FROM BACKEND
+// FETCH TESTIMONIALS
 // -----------------------------
 export async function getTestimonials() {
   try {
-    const res = await fetch("http://localhost:5000/testimonials", {
-      next: { revalidate: 10 }, // revalidate every 10 seconds
+    const res = await fetch(`${API_URL}/testimonials`, {
+      next: { revalidate: 10 },
     });
 
     if (!res.ok) throw new Error("Failed to fetch testimonials");
 
-    const data = await res.json();
-    return data; // Expect an array of testimonial objects
+    return await res.json();
   } catch (error) {
     console.error("Error fetching testimonials:", error);
     return [];
@@ -84,22 +85,26 @@ export async function getTestimonials() {
 export const whyChooseUs = [
   {
     title: 'Qualified Professionals',
-    description: 'Our team consists of certified and experienced personel dedicated to your recovery.',
+    description:
+      'Our team consists of certified and experienced personnel dedicated to your recovery.',
     icon: UserCheck,
   },
   {
     title: 'Personalized Care',
-    description: 'We create tailored treatment plans that address your unique needs and goals.',
+    description:
+      'We create tailored treatment plans that address your unique needs and goals.',
     icon: HeartHandshake,
   },
   {
     title: 'Modern Equipment',
-    description: 'We use state-of-the-art equipment to provide the most effective treatments.',
+    description:
+      'We use state-of-the-art equipment to provide the most effective treatments.',
     icon: Cpu,
   },
   {
     title: 'Supportive Environment',
-    description: 'A calming and encouraging atmosphere to help you feel motivated and hopeful.',
+    description:
+      'A calming and encouraging atmosphere to help you feel motivated and hopeful.',
     icon: Users,
   },
 ];

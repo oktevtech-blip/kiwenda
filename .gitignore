@@ -1,0 +1,53 @@
+# ============================
+# Node / Next.js .gitignore
+# ============================
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment Variables
+.env
+.env.development
+.env.production
+.env.local
+.env.*.local
+
+# Build outputs
+# .next/
+# out/
+# dist/
+# build/
+# .cache/
+# .vercel/
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+
+
+# Dependency folders
+.pnp
+.pnp.js
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm/
+
+# cPanel nodevenv folders
+nodevenv/
