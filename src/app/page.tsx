@@ -22,7 +22,7 @@ import { LucideIcon } from "lucide-react";
 // ✅ Fetch hero image from backend API
 async function getHeroImage() {
   try {
-    const res = await fetch("http://localhost:5000/hero", {
+    const res = await fetch("https://kiwendaserver.onrender.com/hero", {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch hero image");
@@ -53,7 +53,7 @@ export default async function Home() {
     name: t.patient_name,
     quote: t.message,
     imageUrl: t.photo_url
-      ? `http://localhost:5000${t.photo_url}`
+      ? `https://kiwendaserver.onrender.com${t.photo_url}`
       : "/placeholder-user.jpg",
     condition: t.condition || "",
     rating: t.rating || 0,
