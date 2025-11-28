@@ -19,10 +19,14 @@ import { getServices, whyChooseUs, getTestimonials } from "@/lib/constants";
 import * as Icons from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
+
+// Backend base URL
+const BASE_URL = "https://kiwendaserver.onrender.com";
+
 // ✅ Fetch hero image from backend API
 async function getHeroImage() {
   try {
-    const res = await fetch("https://kiwendaserver.onrender.com/hero", {
+    const res = await fetch(`${BASE_URL}/hero`, {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch hero image");
@@ -53,7 +57,7 @@ export default async function Home() {
     name: t.patient_name,
     quote: t.message,
     imageUrl: t.photo_url
-      ? `https://kiwendaserver.onrender.com${t.photo_url}`
+      ? `${BASE_URL}${t.photo_url}`
       : "/placeholder-user.jpg",
     condition: t.condition || "",
     rating: t.rating || 0,
