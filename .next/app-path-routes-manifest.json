@@ -1,10 +1,10 @@
 {
-  "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/contact/page": "/contact",
-  "/gallery/page": "/gallery",
+  "/_not-found/page": "/_not-found",
   "/page": "/",
-  "/patient-resources/page": "/patient-resources",
+  "/contact/page": "/contact",
   "/testimonials/page": "/testimonials",
+  "/patient-resources/page": "/patient-resources",
+  "/gallery/page": "/gallery",
   "/services/[slug]/page": "/services/[slug]"
 }

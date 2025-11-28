@@ -18,26 +18,7 @@
       "static/chunks/874-fd6b5fa8d2da8358.js",
       "static/chunks/984-d742b8dbffee54fe.js",
       "static/chunks/594-78bcf9f0b8ee6f05.js",
-      "static/chunks/app/layout-49cfee8e7768ecc8.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack-02577d7c7b8e22bc.js",
-      "static/chunks/4bd1b696-cda6488f792a2365.js",
-      "static/chunks/684-0247b3fa981d7793.js",
-      "static/chunks/main-app-a28d980c9db4a60e.js",
-      "static/chunks/277-9852fd43da8910cd.js",
-      "static/chunks/752-765b03a3fe576c07.js",
-      "static/chunks/app/contact/page-39e07ebc68d7041e.js"
-    ],
-    "/gallery/page": [
-      "static/chunks/webpack-02577d7c7b8e22bc.js",
-      "static/chunks/4bd1b696-cda6488f792a2365.js",
-      "static/chunks/684-0247b3fa981d7793.js",
-      "static/chunks/main-app-a28d980c9db4a60e.js",
-      "static/chunks/277-9852fd43da8910cd.js",
-      "static/chunks/63-346e1b592bd78e9b.js",
-      "static/chunks/209-0602787a574a82ac.js",
-      "static/chunks/app/gallery/page-6478c5ea5541274c.js"
+      "static/chunks/app/layout-f8b1b604563e0889.js"
     ],
     "/page": [
       "static/chunks/webpack-02577d7c7b8e22bc.js",
@@ -50,14 +31,14 @@
       "static/chunks/834-fc44fbc778286665.js",
       "static/chunks/app/page-d4f3a52311dbe7c9.js"
     ],
-    "/patient-resources/page": [
+    "/contact/page": [
       "static/chunks/webpack-02577d7c7b8e22bc.js",
       "static/chunks/4bd1b696-cda6488f792a2365.js",
       "static/chunks/684-0247b3fa981d7793.js",
       "static/chunks/main-app-a28d980c9db4a60e.js",
       "static/chunks/277-9852fd43da8910cd.js",
-      "static/chunks/984-d742b8dbffee54fe.js",
-      "static/chunks/app/patient-resources/page-015760b5d349f249.js"
+      "static/chunks/752-765b03a3fe576c07.js",
+      "static/chunks/app/contact/page-39e07ebc68d7041e.js"
     ],
     "/testimonials/page": [
       "static/chunks/webpack-02577d7c7b8e22bc.js",
@@ -67,6 +48,25 @@
       "static/chunks/277-9852fd43da8910cd.js",
       "static/chunks/63-346e1b592bd78e9b.js",
       "static/chunks/app/testimonials/page-a78aeb6ee389170b.js"
+    ],
+    "/patient-resources/page": [
+      "static/chunks/webpack-02577d7c7b8e22bc.js",
+      "static/chunks/4bd1b696-cda6488f792a2365.js",
+      "static/chunks/684-0247b3fa981d7793.js",
+      "static/chunks/main-app-a28d980c9db4a60e.js",
+      "static/chunks/277-9852fd43da8910cd.js",
+      "static/chunks/984-d742b8dbffee54fe.js",
+      "static/chunks/app/patient-resources/page-015760b5d349f249.js"
+    ],
+    "/gallery/page": [
+      "static/chunks/webpack-02577d7c7b8e22bc.js",
+      "static/chunks/4bd1b696-cda6488f792a2365.js",
+      "static/chunks/684-0247b3fa981d7793.js",
+      "static/chunks/main-app-a28d980c9db4a60e.js",
+      "static/chunks/277-9852fd43da8910cd.js",
+      "static/chunks/63-346e1b592bd78e9b.js",
+      "static/chunks/209-0602787a574a82ac.js",
+      "static/chunks/app/gallery/page-6478c5ea5541274c.js"
     ],
     "/services/[slug]/page": [
       "static/chunks/webpack-02577d7c7b8e22bc.js",
