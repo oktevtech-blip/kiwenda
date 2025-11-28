@@ -23,11 +23,26 @@ import { LucideIcon } from "lucide-react";
 // Backend base URL
 const BASE_URL = "https://kiwendaserver.onrender.com";
 
+
 async function getHeroImage() {
-  const res = await fetch(`${BASE_URL}/hero`, { cache: "no-store" });
-  const data = await res.json();
-  return data.image_url;
+  try {
+    const res = await fetch(`${BASE_URL}/hero`, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch hero image");
+
+    const data = await res.json();
+
+    // Return proper data URL for <Image /> component
+    if (data.image) {
+      return `data:image/jpeg;base64,${data.image}`;
+    }
+
+    return null;
+  } catch (error) {
+    console.error("Error fetching hero image:", error);
+    return null;
+  }
 }
+
 
 // ✅ Fetch hero image from backend API
 // async function getHeroImage() {
