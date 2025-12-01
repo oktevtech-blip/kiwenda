@@ -21,12 +21,12 @@ import { LucideIcon } from "lucide-react";
 
 
 // Backend base URL
-const BASE_URL = "https://kiwendaserver.onrender.com";
+const API_URL = "https://kiwendaserver.onrender.com";
 
 
 async function getHeroImage() {
   try {
-    const res = await fetch(`${BASE_URL}/hero`, { cache: "no-store" });
+    const res = await fetch(`${API_URL}/hero`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch hero image");
 
     const data = await res.json();
@@ -43,29 +43,6 @@ async function getHeroImage() {
   }
 }
 
-
-// ✅ Fetch hero image from backend API
-// async function getHeroImage() {
-//   try {
-//     const res = await fetch(`${BASE_URL}/hero`, {
-//       cache: "no-store",
-//     });
-//     if (!res.ok) throw new Error("Failed to fetch hero image");
-//     const data = await res.json();
-
-  
-//     if (data.image) {
-//       const base64String = `data:image/jpeg;base64,${data.image}`;
-//       return base64String;
-//     } else {
-//       return null;
-//     }
-//   } catch (error) {
-//     console.error("Error fetching hero image:", error);
-//     return null;
-//   }
-// }
-
 export default async function Home() {
   const heroImage = await getHeroImage();
 
@@ -78,7 +55,7 @@ export default async function Home() {
     name: t.patient_name,
     quote: t.message,
     imageUrl: t.photo_url
-      ? `${BASE_URL}${t.photo_url}`
+      ? `${API_URL}${t.photo_url}`
       : "/placeholder-user.jpg",
     condition: t.condition || "",
     rating: t.rating || 0,
