@@ -29,10 +29,9 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       // ✅ Add your backend server here
-      {
+        {
         protocol: 'https',
-        hostname: 'kiwendaserver.vercel.app',
-        port: '',
+        hostname: 'kiwendaserver.onrender.com',
         pathname: '/uploads/**',
       },
     ],
