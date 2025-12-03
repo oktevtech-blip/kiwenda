@@ -48,7 +48,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 // -----------------------------
 export async function getServices() {
   try {
-    const res = await fetch(`${API_URL}/services`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services`, {
       next: { revalidate: 10 },
     });
 

@@ -17,9 +17,10 @@ export async function generateStaticParams() {
 export default async function ServicePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params; // ✅ must await it
+  const { slug } = params; // ✅ FIXED — no awaiting, params is not a Promise
+
   const services = await getServices();
   const service = services.find((s: any) => s.slug === slug);
 
@@ -27,7 +28,7 @@ export default async function ServicePage({
 
   return (
     <>
-      {/* ✅ Track service visit */}
+      {/* Track service visit */}
       <TrackServiceVisit slug={slug} />
 
       <section className="py-12 md:py-20 bg-secondary">
@@ -44,11 +45,14 @@ export default async function ServicePage({
       <section className="py-12 md:py-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
+            {/* Left Column */}
             <div className="lg:col-span-3">
               <h2 className="text-3xl font-headline mb-4">About the Treatment</h2>
+
               <p className="text-lg text-muted-foreground whitespace-pre-line">
                 {service.long_description}
               </p>
+
               <Button
                 asChild
                 size="lg"
@@ -58,6 +62,7 @@ export default async function ServicePage({
               </Button>
             </div>
 
+            {/* Right Column: Image */}
             <div className="lg:col-span-2">
               {service.image_url && (
                 <Card className="overflow-hidden shadow-lg">
