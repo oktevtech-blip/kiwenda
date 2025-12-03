@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+
 // Define the shape of each testimonial item
 interface Testimonial {
   testimonial_id: number;
@@ -23,21 +25,21 @@ export default function TestimonialsPage() {
   useEffect(() => {
     async function fetchTestimonials() {
       try {
-        const res = await fetch("http://localhost:5000/testimonials", {
-          cache: "no-store", // ensure fresh data each time
+        const res = await fetch(`${API_URL}/testimonials`, {
+          cache: "no-store",
         });
+
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
         const data = await res.json();
 
-        // Map DB fields safely
         const mapped: Testimonial[] = data.map((t: any) => ({
           testimonial_id: t.testimonial_id,
           patient_name: t.patient_name,
           message: t.message,
           photo_url: t.photo_url
-            ? `http://localhost:5000${t.photo_url}` // prepend backend URL
-            : "/placeholder-user.jpg", // fallback image
+            ? `${API_URL}${t.photo_url}`
+            : "/placeholder-user.jpg",
           rating: t.rating,
           status: t.status,
           condition: t.condition || "",

@@ -2,6 +2,8 @@
 
 import { z } from 'zod';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   phone: z.string().min(10, { message: 'Please enter a valid phone number.' }),
@@ -26,7 +28,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
 
   try {
     // ✅ Send data to the EXPRESS backend
-    const res = await fetch("http://localhost:5000/contacts", {
+    const res = await fetch(`${API_URL}/contacts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(validatedFields.data),
