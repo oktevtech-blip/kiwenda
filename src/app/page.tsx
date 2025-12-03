@@ -19,6 +19,7 @@ import {
 import { getServices, whyChooseUs, getTestimonials } from "@/lib/constants";
 import * as Icons from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import HeroAdmin from "./testheroimage";
 
 
 // Backend base URL
@@ -81,7 +82,9 @@ export default async function Home() {
               <p>No hero image found</p>
             </div>
           )}
-
+          <div>
+            <HeroAdmin />
+          </div>
           <div className="container px-4 md:px-6 space-y-4 animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline tracking-tight">
               Kiwenda Rehabilitation Centre and Clinic
