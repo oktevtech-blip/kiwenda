@@ -30,9 +30,9 @@ const nextConfig: NextConfig = {
       },
       // ✅ Add your backend server here
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '5000',
+        protocol: 'https',
+        hostname: 'kiwendaserver.vercel.app',
+        port: '',
         pathname: '/uploads/**',
       },
     ],
