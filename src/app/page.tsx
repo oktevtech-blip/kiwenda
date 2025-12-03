@@ -32,12 +32,8 @@ async function getHeroImage() {
 
     const data = await res.json();
 
-    // Return proper data URL for <Image /> component
-    if (data.image) {
-      return `data:image/jpeg;base64,${data.image}`;
-    }
-
-    return null;
+    // Just return the image URL directly
+    return data.image || null;
   } catch (error) {
     console.error("Error fetching hero image:", error);
     return null;
@@ -45,6 +41,7 @@ async function getHeroImage() {
 }
 
 export default async function Home() {
+
   const heroImage = await getHeroImage();
 
   const [services, testimonialsData] = await Promise.all([
