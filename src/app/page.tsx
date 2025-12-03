@@ -27,7 +27,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 async function getHeroImage() {
   try {
-    const res = await fetch(`${API_URL}/hero`, { cache: "no-store" });
+    const res = await fetch("https://kiwendaserver.onrender.com/hero", { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch hero image");
 
     const data = await res.json();
